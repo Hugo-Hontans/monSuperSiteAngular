@@ -1,0 +1,22 @@
+<h3>Create User</h3>
+<form 
+      [formGroup]="formCreate"
+      (ngSubmit)="onSubmit()">
+  
+  <div>
+    <input formControlName="nom" type="text" id="nom" placeholder="Nom">
+  </div>
+  <div>
+    <input formControlName="prenom" type="text" id="prenom" placeholder="Prenom">
+  </div>
+  <div>
+    <input formControlName="eMail" type="email" id="eMail" placeholder="E-Mail" email>
+  </div>
+  <div>
+    <input formControlName="motDePasse" type="password" id="motDePasse" placeholder="Mot de passe">
+  </div>
+
+  <button type="submit" [disabled]="!formCreate.valid">Create</button>
+</form>
+
+<app-users-list></app-users-list>

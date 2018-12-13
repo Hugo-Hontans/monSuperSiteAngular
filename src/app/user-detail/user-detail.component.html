@@ -1,0 +1,37 @@
+<div>
+  <label>Nom: </label> {{user.nom}}
+</div>
+<div>
+  <label>Prenom: </label> {{user.prenom}}
+</div>
+<div>
+  <label>Email: </label> {{user.eMail}}
+</div>
+<div>
+  <label>Mot de passe: </label> {{user.motDePasse}}
+</div>
+<button class="button btn-danger" (click)='deleteUser()'>Delete</button>
+
+<h3>Update User</h3>
+<form 
+      [formGroup]="formUpdate"
+      (ngSubmit)="onSubmit()">
+  
+  <div>
+    <input formControlName="nom" type="text" id="nom" placeholder="Nom">
+  </div>
+  <div>
+    <input formControlName="prenom" type="text" id="prenom" placeholder="Prenom">
+  </div>
+  <div>
+    <input formControlName="eMail" type="email" id="eMail" placeholder="E-Mail" email>
+  </div>
+  <div>
+    <input formControlName="motDePasseActuel" type="password" id="motDePasseAcutel" placeholder="Mot de passe actuel">
+  </div>
+  <div>
+    <input formControlName="motDePasse" type="password" id="motDePasse" placeholder="Nouveau mot de passe">
+  </div>
+
+  <button type="submit" [disabled]="!formUpdate.valid">Update</button>
+</form>
